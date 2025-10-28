@@ -10,6 +10,27 @@
   "use strict";
 
   /**
+   * Import and initialize enhanced animation system
+   */
+  function initializeAnimationSystem() {
+    // Load animations.css if not already loaded
+    if (!document.querySelector('link[href*="animations.css"]')) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'css/animations.css';
+      document.head.appendChild(link);
+    }
+
+    // Load animations.js if not already loaded
+    if (!document.querySelector('script[src*="animations.js"]')) {
+      const script = document.createElement('script');
+      script.src = 'js/animations.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+  }
+
+  /**
    * Apply .scrolled class to the body as the page is scrolled down
    */
   function toggleScrolled() {
@@ -19,6 +40,9 @@
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
   }
 
+  // Initialize animation system early
+  initializeAnimationSystem();
+  
   document.addEventListener('scroll', toggleScrolled);
   window.addEventListener('load', toggleScrolled);
 

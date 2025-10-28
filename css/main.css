@@ -5781,19 +5781,20 @@ section[id] {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   background-color: var(--surface-color);
 }
 
 .investment-focus .investment-card:hover {
   transform: translateY(-10px);
+  transition: all 0.5s ease;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .investment-focus .investment-card .card-img-top {
   height: 250px;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .investment-focus .investment-card:hover .card-img-top {
